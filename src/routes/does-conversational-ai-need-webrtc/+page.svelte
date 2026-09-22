@@ -154,20 +154,27 @@
 		<strong>session-oriented transport versus request-oriented transport</strong>.
 	</p>
 
-	<h2>What does a LiveKit-style real-time agent actually cost?</h2>
+	<h2>What does the LiveKit real-time agent layer actually cost?</h2>
 	<p>
-		It is important to be precise here because several different costs are often collapsed into
-		“WebRTC cost.”
+		It is important to separate <strong>WebRTC transport</strong> from the cost of running a
+		<strong>stateful hosted agent session</strong>. WebRTC itself is not a two-cent-per-minute protocol.
+		LiveKit's public pricing shows raw WebRTC participant usage at only fractions of a cent per minute
+		after plan allowances.
 	</p>
 	<p>
-		As of <strong>22 September 2026</strong>,
-		<a href="https://livekit.com/pricing">LiveKit's public pricing calculator</a> separates the
-		connection, the hosted agent session, inference and observability. The raw WebRTC connection is not
-		the expensive part: paid-plan WebRTC participant overage is listed at fractions of a cent per minute.
+		But that is not the economically important comparison for an AI agent. As of
+		<strong>22 September 2026</strong>,
+		<a href="https://livekit.com/pricing">LiveKit's pricing calculator</a> shows
+		<strong>$0.0100/min for the hosted agent session</strong> and, when enabled in the calculator,
+		<strong>another $0.0100/min for observability</strong>.
 	</p>
 	<p>
-		The more interesting cost is the complete stateful agent stack. Using the exact example currently
-		shown in LiveKit's calculator, a web/mobile agent is approximately:
+		So the LiveKit platform/session layer in that configuration is already about
+		<strong>$0.0200 per connected minute before STT, LLM or TTS are added</strong>. For a web/mobile
+		agent, the calculator shows the WebRTC connection itself separately rather than as the dominant cost.
+	</p>
+	<p>
+		Using the exact example currently shown in LiveKit's calculator, the full voice-agent stack is:
 	</p>
 	<table>
 		<thead>
@@ -210,16 +217,17 @@
 		relevant.
 	</p>
 	<p>
-		The observability charge is also worth understanding. LiveKit describes its observability features
-		as session recordings plus turn-by-turn details such as transcripts, trace spans and logs. That is
-		broadly analogous to the kind of session analytics and diagnostics an AI platform may provide,
-		although the exact feature sets are not identical. Liforma includes its own experience analytics
-		without a separate per-minute observability charge.
+		The observability charge is also worth understanding. LiveKit describes observability as session
+		recordings plus turn-by-turn details such as transcripts, trace spans and logs. Liforma includes
+		session analytics and diagnostics as part of the platform rather than exposing a separate
+		per-minute observability line item, although the exact feature sets are not identical.
 	</p>
 	<p>
-		And this is still not an apples-to-apples avatar comparison: the LiveKit example above is a
-		<strong>voice-agent stack</strong>. It does not include the cost of generating or animating a visual
-		character. A product using a separate real-time avatar renderer would add that cost on top.
+		More importantly, LiveKit is not supplying an animated character in this example. It gives the
+		developer the real-time agent infrastructure and access to separately priced STT, LLM and TTS
+		models. There is no speech-to-animation layer in the quoted voice-agent stack. If the developer
+		wants a visual avatar, that rendering or animation system has to come from somewhere else and its
+		cost sits on top.
 	</p>
 
 	<h2>Why session-based billing can dominate cheap AI inference</h2>
@@ -237,15 +245,19 @@
 		minutes: about <strong>$0.15</strong> at the published Liforma Live rate.
 	</p>
 	<p>
-		By contrast, the LiveKit calculator example above is about <strong>3.79¢ for every connected
-		minute</strong> for agent session + LLM + STT + TTS + observability before adding any visual-avatar
-		rendering. Over 30 wall-clock minutes that is about <strong>$1.14</strong>, before the avatar layer.
+		By contrast, LiveKit's calculator example is about <strong>2¢ per connected minute for the
+		hosted agent session plus observability alone</strong>. The selected STT, LLM and TTS then add
+		another 1.79¢/min, taking the example to <strong>3.79¢/connected minute before any visual-avatar
+		rendering</strong>. Over 30 wall-clock minutes that is about <strong>$1.14</strong>, before the
+		avatar layer.
 	</p>
 	<p>
-		The important point is not that WebRTC itself costs 3.79¢/min — it does not. The difference comes
-		from the <strong>stateful real-time agent architecture and the services typically attached to
-		it</strong>. Once inference and browser-side animation become cheap, keeping a per-user real-time
-		agent session alive can become a significant part of the total cost.
+		This is the key economic distinction. Liforma does not add a separate per-minute session or
+		observability charge to keep the experience alive. The platform handles session orchestration and
+		analytics, while the <strong>$0.01 per generated speech minute</strong> covers STT, intelligence,
+		TTS and speech-to-animation. LiveKit's model is more modular: the real-time agent/session layer is
+		charged separately, STT/LLM/TTS are selected and priced separately, and visual animation is outside
+		the quoted stack.
 	</p>
 
 	<h2>Request-based architecture changes what you pay for</h2>
