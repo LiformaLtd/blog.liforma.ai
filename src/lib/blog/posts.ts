@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'does-conversational-ai-need-webrtc',
+		title: 'Does Conversational AI Really Need WebRTC? HTTP vs WebRTC for AI Avatars',
+		description:
+			'WebRTC is ideal for continuous real-time media, but many AI character experiences are naturally turn-based. Learn when HTTP can be simpler, cheaper and still feel real-time.',
+		datePublished: '2026-09-22',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'technical'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing WebRTC sessions with HTTP-based conversational AI'
+	},
+	{
 		slug: 'how-much-do-interactive-ai-avatars-cost',
 		title: 'How Much Do Interactive AI Avatars Cost? 2026 Pricing Compared',
 		description:
