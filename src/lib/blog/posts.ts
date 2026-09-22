@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'how-to-create-interactive-ai-role-play-without-coding',
+		title: 'How to Create an Interactive AI Role-Play Without Coding',
+		description:
+			'Build an AI role-play without coding using reusable characters, sets, scenes, stats, branching and feedback — from scenario design through publishing.',
+		datePublished: '2026-09-22',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'training'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration of an interactive AI role-play training experience'
+	},
+	{
 		slug: 'photorealistic-vs-stylized-ai-avatars',
 		title: "Photorealistic vs Stylized AI Avatars: Why More Realistic Isn't Always Better",
 		description:
