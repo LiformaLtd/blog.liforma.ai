@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'how-much-do-interactive-ai-avatars-cost',
+		title: 'How Much Do Interactive AI Avatars Cost? 2026 Pricing Compared',
+		description:
+			'Compare 2026 interactive AI avatar pricing from Liforma, HeyGen, Tavus, Synthesia and D-ID — including what each per-minute price actually includes.',
+		datePublished: '2026-09-22',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'pricing'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing the cost of interactive AI avatar experiences'
+	},
+	{
 		slug: 'ai-avatar-vs-ai-character-vs-visual-agent-vs-chatbot',
 		title: "AI Avatar vs AI Character vs Visual Agent vs Chatbot: What's the Difference?",
 		description:
