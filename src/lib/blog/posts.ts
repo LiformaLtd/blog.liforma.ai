@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'best-interactive-ai-avatar-platforms-2026',
+		title: 'The Best Interactive AI Avatar Platforms in 2026: Liforma, HeyGen, Tavus, D-ID and Synthesia Compared',
+		description:
+			'Compare Liforma, HeyGen LiveAvatar, Tavus CVI, D-ID Visual Agents and Synthesia Interactive Avatars by pricing, visual style, stack completeness, authoring model and best use case.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'comparison'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing leading interactive AI avatar platforms'
+	},
+	{
 		slug: 'ai-avatars-for-training-role-play-scoring-state-feedback',
 		title: 'AI Avatars for Training: Building Role-Plays With Scoring, State and Feedback',
 		description:
