@@ -119,11 +119,63 @@
 		games, training and everyday websites, the cost per minute matters.
 	</p>
 	<p>
-		Liforma is designed around a target cost of roughly <strong>one US cent per minute for the complete
-		conversational stack</strong>: speech recognition, intelligence, speech generation and character
-		animation. Some avatar services quote low prices for animation alone, leaving developers to provide
-		and pay separately for speech and intelligence. We think the useful comparison is the cost of the
-		whole experience.
+		Liforma is designed around a target cost of roughly <strong>one US cent per minute for everything</strong>:
+		speech recognition, intelligence, speech generation, character animation and analytics. Some avatar
+		services quote low prices for animation alone, leaving developers to provide and pay separately for
+		speech and intelligence. We think the useful comparison is the cost of the whole experience.
+	</p>
+	<p>
+		<a href="https://livekit.com/pricing">LiveKit Cloud</a> publishes that comparison directly. They
+		charge <strong>$0.0100 per minute for the agent session alone</strong> — the same figure as
+		Liforma's target for the whole experience. They charge an additional
+		<strong>$0.0100 per minute for observability</strong>, their equivalent of session analytics.
+		On Liforma, analytics is included in that one cent, not billed beside it. Their pricing estimator,
+		with a US local phone number, observability and the speech models below, comes to
+		<strong>$0.0479 per minute</strong>. That total still does not include an animated character.
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>LiveKit Cloud component</th>
+				<th>Published rate</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Agent session</td>
+				<td>$0.0100/min</td>
+			</tr>
+			<tr>
+				<td>Telephony, US local number</td>
+				<td>$0.0100/min</td>
+			</tr>
+			<tr>
+				<td>LLM, Gemma 4 31B</td>
+				<td>$0.0014/min</td>
+			</tr>
+			<tr>
+				<td>STT, AssemblyAI Universal-3.5 Pro Streaming</td>
+				<td>$0.0075/min</td>
+			</tr>
+			<tr>
+				<td>TTS, Fish Audio S2.1 Pro</td>
+				<td>$0.0090/min</td>
+			</tr>
+			<tr>
+				<td>Observability (session analytics)</td>
+				<td>$0.0100/min</td>
+			</tr>
+			<tr>
+				<td>Total estimated cost</td>
+				<td>$0.0479/min</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		The agent-session rate applies after each plan's included minutes. A browser experience can omit
+		the phone line. Observability does not: it is a second cent per minute on top of the agent session,
+		before speech models or character animation. Liforma's one cent includes analytics with the rest of
+		the experience.
 	</p>
 	<p>
 		That architecture is also why Liforma does not assume every conversational experience needs a
