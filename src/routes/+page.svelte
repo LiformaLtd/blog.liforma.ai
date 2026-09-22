@@ -2,7 +2,7 @@
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import { listPublishedPosts } from '$lib/blog';
-	import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from '$lib/site';
+	import { DEFAULT_DESCRIPTION, SITE_NAME, absoluteUrl } from '$lib/site';
 
 	const posts = listPublishedPosts();
 
@@ -17,7 +17,7 @@
 			'@context': 'https://schema.org',
 			'@type': 'Blog',
 			name: SITE_NAME,
-			url: SITE_URL,
+			url: absoluteUrl('/'),
 			description: DEFAULT_DESCRIPTION,
 			publisher: { '@type': 'Organization', name: 'Liforma', url: 'https://www.liforma.ai' }
 		}

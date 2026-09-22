@@ -9,7 +9,7 @@
 		type BlogPost,
 		type ResourcePost
 	} from '$lib/blog';
-	import { absoluteUrl, SITE_URL } from '$lib/site';
+	import { absoluteUrl } from '$lib/site';
 
 	type Article = BlogPost | ResourcePost;
 
@@ -37,7 +37,7 @@
 		datePublished: published,
 		dateModified: modified,
 		author: {
-			'@type': 'Person',
+			'@type': author?.type ?? 'Person',
 			name: author?.name ?? 'Liforma',
 			url: author?.url
 		},
@@ -47,7 +47,7 @@
 			url: 'https://www.liforma.ai',
 			logo: {
 				'@type': 'ImageObject',
-				url: `${SITE_URL}/favicon-32.png`
+				url: absoluteUrl('/favicon-32.png')
 			}
 		},
 		image: [ogImage],

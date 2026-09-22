@@ -1,7 +1,12 @@
+/**
+ * Canonical production origin for absolute URLs (sitemap, canonical, OG, JSON-LD).
+ * Do not derive from the request host — previews must still emit production canonicals.
+ * Optional PUBLIC_SITE_URL overrides for rare non-prod canonical testing only.
+ */
 import { env } from '$env/dynamic/public';
 
 export const SITE_NAME = 'Liforma Blog';
-export const SITE_URL = env.PUBLIC_SITE_URL || 'https://blog.liforma.ai';
+export const SITE_URL = (env.PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://blog.liforma.ai');
 export const DEFAULT_DESCRIPTION =
 	'Product updates, technical deep dives, and practical guides for Liforma avatar experiences.';
 export const WWW_URL = 'https://www.liforma.ai';

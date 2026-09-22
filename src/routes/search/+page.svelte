@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { replaceState } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import { listPublishedPosts, resolvePostTags, type BlogPost } from '$lib/blog';
@@ -28,10 +30,9 @@
 	function onInput(event: Event) {
 		const value = (event.currentTarget as HTMLInputElement).value;
 		query = value;
-		const url = new URL(window.location.href);
-		if (value.trim()) url.searchParams.set('q', value);
-		else url.searchParams.delete('q');
-		history.replaceState({}, '', url);
+		const trimmed = value.trim();
+		const href = trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search';
+		void replaceState(resolve(href as '/'), {});
 	}
 </script>
 
