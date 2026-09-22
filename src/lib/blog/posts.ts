@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'ai-avatar-vs-ai-character-vs-visual-agent-vs-chatbot',
+		title: "AI Avatar vs AI Character vs Visual Agent vs Chatbot: What's the Difference?",
+		description:
+			'AI avatars, AI characters, visual agents and chatbots are often confused. Learn the practical differences — and where interactive AI experiences fit.',
+		datePublished: '2026-09-22',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'product'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing AI avatars, AI characters, visual agents and chatbots'
+	},
+	{
 		slug: 'what-is-an-avatar-experience',
 		title: 'What Is an Interactive AI Character? From AI Avatars to Interactive Experiences',
 		description:
