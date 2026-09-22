@@ -156,25 +156,26 @@
 
 	<h2>What does the LiveKit real-time agent layer actually cost?</h2>
 	<p>
-		It is important to separate <strong>WebRTC transport</strong> from the cost of running a
-		<strong>stateful hosted agent session</strong>. WebRTC itself is not a two-cent-per-minute protocol.
-		LiveKit's public pricing shows raw WebRTC participant usage at only fractions of a cent per minute
-		after plan allowances.
-	</p>
-	<p>
-		But that is not the economically important comparison for an AI agent. As of
+		For a developer building a conversational AI product with LiveKit, the economically relevant
+		starting point is the <strong>hosted agent session</strong>. As of
 		<strong>22 September 2026</strong>,
 		<a href="https://livekit.com/pricing">LiveKit's pricing calculator</a> shows
-		<strong>$0.0100/min for the hosted agent session</strong> and, when enabled in the calculator,
-		<strong>another $0.0100/min for observability</strong>.
+		<strong>$0.0100 per connected minute for the agent session</strong>.
 	</p>
 	<p>
-		So the LiveKit platform/session layer in that configuration is already about
-		<strong>$0.0200 per connected minute before STT, LLM or TTS are added</strong>. For a web/mobile
-		agent, the calculator shows the WebRTC connection itself separately rather than as the dominant cost.
+		That is essentially the managed real-time session layer around the conversation: the agent process
+		is kept attached to the live WebRTC session and LiveKit handles the connection and session
+		orchestration. LiveKit separately meters raw WebRTC participant usage at a much lower rate, but that
+		is not the meaningful cost comparison for an AI agent using LiveKit's hosted agent runtime.
 	</p>
 	<p>
-		Using the exact example currently shown in LiveKit's calculator, the full voice-agent stack is:
+		If LiveKit observability is enabled in the calculator, that adds another
+		<strong>$0.0100 per connected minute</strong>. Before any STT, LLM or TTS is selected, the hosted
+		agent-session plus observability layer is therefore about <strong>$0.0200 per connected minute</strong>.
+	</p>
+	<p>
+		The AI pipeline is then added separately. Using the exact example currently shown in LiveKit's
+		calculator:
 	</p>
 	<table>
 		<thead>
@@ -186,6 +187,10 @@
 		<tbody>
 			<tr>
 				<td>Agent session</td>
+				<td><strong>$0.0100/min</strong></td>
+			</tr>
+			<tr>
+				<td>Observability</td>
 				<td><strong>$0.0100/min</strong></td>
 			</tr>
 			<tr>
@@ -201,11 +206,7 @@
 				<td>$0.0090/min</td>
 			</tr>
 			<tr>
-				<td>Observability</td>
-				<td><strong>$0.0100/min</strong></td>
-			</tr>
-			<tr>
-				<td><strong>Total before avatar rendering</strong></td>
+				<td><strong>Total before avatar animation</strong></td>
 				<td><strong>$0.0379/min</strong></td>
 			</tr>
 		</tbody>
@@ -217,47 +218,85 @@
 		relevant.
 	</p>
 	<p>
-		The observability charge is also worth understanding. LiveKit describes observability as session
-		recordings plus turn-by-turn details such as transcripts, trace spans and logs. Liforma includes
-		session analytics and diagnostics as part of the platform rather than exposing a separate
-		per-minute observability line item, although the exact feature sets are not identical.
+		The important point is that LiveKit is providing a real-time agent platform, not a complete visual
+		avatar stack. STT, LLM and TTS are chosen and priced separately. The quoted stack also has no
+		<strong>speech-to-animation (STA)</strong> component, so a developer who wants an animated visual
+		character needs to add a separate avatar rendering or animation system on top.
 	</p>
 	<p>
-		More importantly, LiveKit is not supplying an animated character in this example. It gives the
-		developer the real-time agent infrastructure and access to separately priced STT, LLM and TTS
-		models. There is no speech-to-animation layer in the quoted voice-agent stack. If the developer
-		wants a visual avatar, that rendering or animation system has to come from somewhere else and its
-		cost sits on top.
+		LiveKit observability includes capabilities such as recordings, transcripts, trace spans and logs.
+		Liforma's analytics and diagnostics are not identical, but Liforma includes its experience analytics
+		as part of the platform rather than adding a separate per-minute observability charge.
 	</p>
 
-	<h2>Why session-based billing can dominate cheap AI inference</h2>
-	<p>
-		This matters most when the underlying AI stack becomes inexpensive.
-	</p>
+	<h2>Why this is different from Liforma's pricing model</h2>
 	<p>
 		<a href="https://www.liforma.ai/pricing">Liforma Live is currently priced at $0.01 per generated
-		speech minute</a> for STT, intelligence, TTS and animation, with experience analytics included.
-		Liforma charges when speech and animation are generated rather than for the whole period the user
-		has the experience open.
+		speech minute</a> for the complete <strong>STT → intelligence → TTS → STA</strong> pipeline.
+		Session orchestration and experience analytics do not have a separate per-connected-minute charge.
 	</p>
 	<p>
-		If the avatar speaks for half of a 30-minute experience, that is roughly 15 generated speech
-		minutes: about <strong>$0.15</strong> at the published Liforma Live rate.
+		That creates a very different cost structure:
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Layer</th>
+				<th>LiveKit example</th>
+				<th>Liforma</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Hosted real-time agent/session layer</td>
+				<td><strong>$0.0100 / connected min</strong></td>
+				<td><strong>No separate per-minute charge</strong></td>
+			</tr>
+			<tr>
+				<td>Observability / analytics</td>
+				<td><strong>$0.0100 / connected min</strong> when enabled</td>
+				<td><strong>Included</strong></td>
+			</tr>
+			<tr>
+				<td>STT</td>
+				<td>Selected and priced separately</td>
+				<td>Included</td>
+			</tr>
+			<tr>
+				<td>LLM / intelligence</td>
+				<td>Selected and priced separately</td>
+				<td>Included</td>
+			</tr>
+			<tr>
+				<td>TTS</td>
+				<td>Selected and priced separately</td>
+				<td>Included</td>
+			</tr>
+			<tr>
+				<td>Speech-to-animation / avatar rendering</td>
+				<td>Not included in quoted voice-agent stack</td>
+				<td>Included</td>
+			</tr>
+			<tr>
+				<td>Complete conversational character stack</td>
+				<td>Depends on selected services + avatar provider</td>
+				<td><strong>$0.01 / generated speech min</strong></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		If a Liforma character speaks for half of a 30-minute experience, that is roughly 15 generated
+		speech minutes, or about <strong>$0.15</strong> at the published Liforma Live rate.
 	</p>
 	<p>
-		By contrast, LiveKit's calculator example is about <strong>2¢ per connected minute for the
-		hosted agent session plus observability alone</strong>. The selected STT, LLM and TTS then add
-		another 1.79¢/min, taking the example to <strong>3.79¢/connected minute before any visual-avatar
-		rendering</strong>. Over 30 wall-clock minutes that is about <strong>$1.14</strong>, before the
-		avatar layer.
+		The LiveKit calculator example, by contrast, is about <strong>3.79¢ for every connected
+		minute before any avatar animation is added</strong>. Over 30 connected minutes, that is about
+		<strong>$1.14</strong> before the visual-character layer.
 	</p>
 	<p>
-		This is the key economic distinction. Liforma does not add a separate per-minute session or
-		observability charge to keep the experience alive. The platform handles session orchestration and
-		analytics, while the <strong>$0.01 per generated speech minute</strong> covers STT, intelligence,
-		TTS and speech-to-animation. LiveKit's model is more modular: the real-time agent/session layer is
-		charged separately, STT/LLM/TTS are selected and priced separately, and visual animation is outside
-		the quoted stack.
+		This is the architectural point behind Liforma's HTTP approach. We do not need to charge a
+		per-user real-time session fee simply to keep a conversational connection alive. Instead, the
+		platform can charge primarily for the useful AI work performed when the character actually responds.
 	</p>
 
 	<h2>Request-based architecture changes what you pay for</h2>
