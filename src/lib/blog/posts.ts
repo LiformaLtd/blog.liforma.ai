@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'how-to-add-an-ai-character-to-your-website',
+		title: 'How to Add an AI Character to Your Website',
+		description:
+			'Learn how to add an interactive AI character to a website as a full embed, floating assistant or app component — and how to make it useful with context, tools and the right interaction model.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'website-ai'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration of an AI character embedded in a website'
+	},
+	{
 		slug: 'multi-character-ai-conversations',
 		title: 'Multi-Character AI: How to Build Conversations With Multiple AI Characters',
 		description:
