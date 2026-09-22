@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'multi-character-ai-conversations',
+		title: 'Multi-Character AI: How to Build Conversations With Multiple AI Characters',
+		description:
+			'Learn how multi-character AI experiences coordinate distinct characters, shared state, private knowledge, scenes and turn-taking without becoming multi-agent chaos.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'multi-character'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration of multiple AI characters participating in one interactive experience'
+	},
+	{
 		slug: 'how-to-create-interactive-ai-role-play-without-coding',
 		title: 'How to Create an Interactive AI Role-Play Without Coding',
 		description:
