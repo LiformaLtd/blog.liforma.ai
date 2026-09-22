@@ -288,7 +288,7 @@
 
 	<div class="callout">
 		<strong>Go deeper:</strong>
-		read <a href="/what-is-an-avatar-experience">What Is an Interactive AI Character?</a> or
+		read <a href="/what-is-an-avatar-experience">What is an Avatar Experience?</a> or
 		<a href="https://www.liforma.ai/">explore Liforma experiences</a>.
 	</div>
 </BlogPostLayout>
