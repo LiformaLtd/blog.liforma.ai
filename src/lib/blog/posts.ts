@@ -48,10 +48,11 @@ export const blogPosts: BlogPost[] = [
 	},
 	{
 		slug: 'what-is-an-avatar-experience',
-		title: 'What is an Avatar Experience?',
+		title: 'What Is an Avatar Experience? From AI Characters to Interactive Worlds',
 		description:
-			'Avatar Experiences are reusable, publishable configurations that turn characters, agents, voices, and worlds into live interactive sessions — in the browser.',
+			'Learn how Avatar Experiences combine reusable AI characters, costumes, sets, scenes, state and feedback into interactive training, learning, entertainment and customer experiences.',
 		datePublished: '2026-09-22',
+		dateModified: '2026-09-22',
 		authorId: 'liforma-team',
 		tags: ['avatar-experiences', 'product'],
 		imageKey: 'avatar-experience',
