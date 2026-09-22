@@ -12,7 +12,8 @@ export const tags: TagDefinition[] = [
 	{ slug: 'training', label: 'Training' },
 	{ slug: 'multi-character', label: 'Multi-Character AI' },
 	{ slug: 'website-ai', label: 'Website AI' },
-	{ slug: 'comparison', label: 'Comparison' }
+	{ slug: 'comparison', label: 'Comparison' },
+	{ slug: 'memory-state', label: 'Memory & State' }
 ];
 
 export function getTag(slug: string): TagDefinition | undefined {
