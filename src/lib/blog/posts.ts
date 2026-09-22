@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'photorealistic-vs-stylized-ai-avatars',
+		title: "Photorealistic vs Stylized AI Avatars: Why More Realistic Isn't Always Better",
+		description:
+			'Compare photorealistic and stylized AI avatars for training, education, games, digital twins and interactive experiences — and learn when realism helps or hurts.',
+		datePublished: '2026-09-22',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'design'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing photorealistic and stylized AI avatar characters'
+	},
+	{
 		slug: 'does-conversational-ai-need-webrtc',
 		title: 'Does Conversational AI Really Need WebRTC? HTTP vs WebRTC for AI Avatars',
 		description:
