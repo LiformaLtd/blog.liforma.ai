@@ -18,6 +18,7 @@ export const blogPosts: BlogPost[] = [
 		description:
 			'WebRTC is ideal for continuous real-time media, but many AI character experiences are naturally turn-based. Learn when HTTP can be simpler, cheaper and still feel real-time.',
 		datePublished: '2026-09-22',
+		dateModified: '2026-09-22',
 		authorId: 'liforma-team',
 		tags: ['avatar-experiences', 'technical'],
 		imageKey: 'avatar-experience',
