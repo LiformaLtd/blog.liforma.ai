@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'ai-avatars-for-training-role-play-scoring-state-feedback',
+		title: 'AI Avatars for Training: Building Role-Plays With Scoring, State and Feedback',
+		description:
+			'Learn how to design AI avatar training simulations with explicit state, meaningful scoring, multi-character scenarios and feedback tied to what the learner actually did.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'training'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration of an AI avatar training simulation with scoring and feedback'
+	},
+	{
 		slug: 'how-to-add-an-ai-character-to-your-website',
 		title: 'How to Add an AI Character to Your Website',
 		description:
