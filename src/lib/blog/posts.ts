@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'ai-character-memory-vs-state',
+		title: "AI Character Memory vs State: Why Remembering the Conversation Isn't Enough",
+		description:
+			'Learn the difference between AI character memory, conversation history, knowledge and explicit state — and why believable interactive characters need more than a longer transcript.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'memory-state'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration showing AI character memory, knowledge and interactive state'
+	},
+	{
 		slug: 'best-interactive-ai-avatar-platforms-2026',
 		title: 'The Best Interactive AI Avatar Platforms in 2026: Liforma, HeyGen, Tavus, D-ID and Synthesia Compared',
 		description:
