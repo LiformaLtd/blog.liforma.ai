@@ -5,7 +5,8 @@ export type TagDefinition = {
 
 export const tags: TagDefinition[] = [
 	{ slug: 'avatar-experiences', label: 'Avatar Experiences' },
-	{ slug: 'product', label: 'Product' }
+	{ slug: 'product', label: 'Product' },
+	{ slug: 'pricing', label: 'Pricing' }
 ];
 
 export function getTag(slug: string): TagDefinition | undefined {
