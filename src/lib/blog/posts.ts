@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'three-ways-to-build-with-liforma',
+		title: 'Three Ways to Build With Liforma: Full Stack, Bring Your Own LLM, or Add Avatars to Your Voice Agent',
+		description:
+			'Choose between Liforma Live, Relay and Motion: use the complete avatar stack, bring your own intelligence layer, or add Liforma animation to ElevenLabs, Gemini Live, OpenAI Realtime and other voice agents.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'technical', 'product'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Diagram of three Liforma integration layers from full conversational stack to speech-to-animation only'
+	},
+	{
 		slug: 'ai-character-memory-vs-state',
 		title: "AI Character Memory vs State: Why Remembering the Conversation Isn't Enough",
 		description:
