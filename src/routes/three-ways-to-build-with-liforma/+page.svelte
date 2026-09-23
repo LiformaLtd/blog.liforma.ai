@@ -218,11 +218,11 @@
 	<p>
 		For example:
 	</p>
-	<pre><code>const experience = await Experience.startSession({
+	<pre><code>{`const experience = await Experience.startSession({
   experienceId: 'exp_YOUR_EXPERIENCE_ID',
   mode: 'conversation',
   speechInputMode: 'auto',
-  conversationProcessor: async ({ text, conversation, signal }) =&gt; {
+  conversationProcessor: async ({ text, conversation, signal }) => {
     const response = await yourAgent.respond({
       text,
       conversation,
@@ -231,7 +231,7 @@
 
     return response.text;
   }
-});</code></pre>
+});`}</code></pre>
 	<p>
 		The processor can also stream text incrementally rather than waiting for one complete response.
 		<a href="https://docs.liforma.ai/guides/custom-conversation-processor">See the Custom Conversation
