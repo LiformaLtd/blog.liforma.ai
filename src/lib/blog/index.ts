@@ -77,7 +77,15 @@ export function listSitemapEntries(): SitemapEntry[] {
 		});
 	}
 
-	for (const resource of listPublishedResourcePosts()) {
+	const publishedResources = listPublishedResourcePosts();
+	if (publishedResources.length > 0) {
+		entries.push({
+			loc: absoluteUrl('/resources'),
+			lastmod: newestDate(publishedResources.map((p) => p.dateModified ?? p.datePublished))
+		});
+	}
+
+	for (const resource of publishedResources) {
 		entries.push({
 			loc: absoluteUrl(`/resources/${resource.slug}`),
 			lastmod: resource.dateModified ?? resource.datePublished
