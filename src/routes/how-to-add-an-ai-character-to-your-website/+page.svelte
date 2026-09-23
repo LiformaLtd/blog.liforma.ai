@@ -131,13 +131,13 @@
 	<p>
 		Liforma's HTML integration uses a CDN script and one custom element. There is no build step:
 	</p>
-	<pre><code>&lt;script src="https://cdn.liforma.ai/sdk/v2/client.js"&gt;&lt;/script&gt;
+	<pre><code>{`<script src="https://cdn.liforma.ai/sdk/v2/client.js"></script>
 
-&lt;div style="width: 100%; min-height: 480px;"&gt;
-  &lt;liforma-experience
+<div style="width: 100%; min-height: 480px;">
+  <liforma-experience
     experience-id="exp_YOUR_EXPERIENCE_ID"
-  &gt;&lt;/liforma-experience&gt;
-&lt;/div&gt;</code></pre>
+  ></liforma-experience>
+</div>`}</code></pre>
 	<p>
 		The same approach works in ordinary HTML and in site builders or CMS products that allow custom
 		HTML, including WordPress, Webflow, Squarespace, Framer, Shopify, Wix and Ghost.
@@ -154,14 +154,14 @@
 		lightweight visual preview. The actual player and conversational session are created when the visitor
 		opens it.
 	</p>
-	<pre><code>&lt;script src="https://cdn.liforma.ai/sdk/v2/client.js"&gt;&lt;/script&gt;
+	<pre><code>{`<script src="https://cdn.liforma.ai/sdk/v2/client.js"></script>
 
-&lt;liforma-experience-widget
+<liforma-experience-widget
   experience-id="exp_YOUR_EXPERIENCE_ID"
   alt="Talk to our assistant"
   position="bottom-right"
   offset="16"
-&gt;&lt;/liforma-experience-widget&gt;</code></pre>
+></liforma-experience-widget>`}</code></pre>
 	<p>
 		This is usually the best pattern for product help, sales assistance and support because the
 		character is available across the site without obscuring the content.
@@ -177,11 +177,11 @@
 	<p>
 		For example, a Svelte application can render the complete experience with:
 	</p>
-	<pre><code>&lt;script lang="ts"&gt;
+	<pre><code>{`<script lang="ts">
   import { Experience } from '@liforma/client/svelte';
-&lt;/script&gt;
+</script>
 
-&lt;Experience experienceId="exp_YOUR_EXPERIENCE_ID" /&gt;</code></pre>
+<Experience experienceId="exp_YOUR_EXPERIENCE_ID" />`}</code></pre>
 	<p>
 		The Liforma SDK provides equivalent integration surfaces for Svelte, React and Next.js.
 		<a href="https://docs.liforma.ai/getting-started/quick-start">The quick start</a> shows the supported
