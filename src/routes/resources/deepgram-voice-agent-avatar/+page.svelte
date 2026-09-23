@@ -63,7 +63,7 @@
 	<h2>Minimal Deepgram + Liforma integration</h2>
 	<pre><code>npm install @liforma/client</code></pre>
 
-	<pre><code>import { connectDeepgramAgent } from '@liforma/client/deepgram';
+	<pre><code>{`import { connectDeepgramAgent } from '@liforma/client/deepgram';
 
 const bridge = await connectDeepgramAgent(experience, {
   proxyUrl,
@@ -71,7 +71,7 @@ const bridge = await connectDeepgramAgent(experience, {
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();`}</code></pre>
 
 	<p>
 		The Liforma helper manages Deepgram's realtime handshake, streams microphone audio and forwards the

@@ -67,7 +67,7 @@
 		For browser-based Realtime applications, Liforma's WebRTC helper maps the OpenAI remote audio track
 		directly to a Liforma utterance and uses transcript events on the data channel to improve lip-sync.
 	</p>
-	<pre><code>import { connectOpenAiRealtimeWebRtc } from '@liforma/client/openai';
+	<pre><code>{`import { connectOpenAiRealtimeWebRtc } from '@liforma/client/openai';
 
 const bridge = await connectOpenAiRealtimeWebRtc(experience, {
   ephemeralKey,
@@ -76,7 +76,7 @@ const bridge = await connectOpenAiRealtimeWebRtc(experience, {
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();`}</code></pre>
 
 	<p>
 		Do not also attach the OpenAI remote track to a separate HTML audio element, or you can end up
@@ -103,7 +103,7 @@ await bridge.end();</code></pre>
 		Use <code>connectOpenAiRealtime()</code> when your application already terminates Realtime over a
 		WebSocket or you specifically need access to PCM chunks.
 	</p>
-	<pre><code>import { connectOpenAiRealtime } from '@liforma/client/openai';
+	<pre><code>{`import { connectOpenAiRealtime } from '@liforma/client/openai';
 
 const bridge = await connectOpenAiRealtime(experience, {
   ephemeralKey,
@@ -112,7 +112,7 @@ const bridge = await connectOpenAiRealtime(experience, {
   // instructions,
   // model,
   // voice
-});</code></pre>
+});`}</code></pre>
 	<p>
 		The helper turns each OpenAI response into a Liforma utterance, writes the audio chunks, forwards
 		transcript information for alignment and cancels avatar playback on unexpected disconnects or

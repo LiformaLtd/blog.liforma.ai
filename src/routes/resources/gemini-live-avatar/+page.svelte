@@ -59,7 +59,7 @@
 	<h2>Minimal Gemini Live + Liforma integration</h2>
 	<pre><code>npm install @liforma/client</code></pre>
 
-	<pre><code>import { connectGeminiLive } from '@liforma/client/google';
+	<pre><code>{`import { connectGeminiLive } from '@liforma/client/google';
 
 const bridge = await connectGeminiLive(experience, {
   proxyUrl
@@ -67,7 +67,7 @@ const bridge = await connectGeminiLive(experience, {
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();`}</code></pre>
 
 	<p>
 		The helper sends microphone PCM to Gemini Live and writes Gemini's generated PCM into Liforma

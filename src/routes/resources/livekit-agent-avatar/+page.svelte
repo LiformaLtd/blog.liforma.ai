@@ -60,17 +60,17 @@
 	<h2>Minimal LiveKit + Liforma integration</h2>
 	<pre><code>npm install @liforma/client livekit-client</code></pre>
 
-	<pre><code>import { connectLiveKitAgent } from '@liforma/client/livekit';
+	<pre><code>{`import { connectLiveKitAgent } from '@liforma/client/livekit';
 
 const bridge = await connectLiveKitAgent(experience, {
   url,
   token,
   // enableTranscript: true,
-  // shouldBridgeParticipant: (p) =&gt; p.identity.startsWith('agent')
+  // shouldBridgeParticipant: (p) => p.identity.startsWith('agent')
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();`}</code></pre>
 
 	<p>
 		The helper joins the room, bridges the selected remote audio track directly into a Liforma

@@ -60,14 +60,14 @@
 	<p>
 		Once your Liforma Experience has started, connect the existing ElevenAgent:
 	</p>
-	<pre><code>import { connectElevenLabsAgent } from '@liforma/client/elevenlabs';
+	<pre><code>{`import { connectElevenLabsAgent } from '@liforma/client/elevenlabs';
 
 const bridge = await connectElevenLabsAgent(experience, {
   signedUrl
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();`}</code></pre>
 
 	<p>
 		The Liforma helper receives the ElevenLabs agent audio, determines the configured PCM output format,
@@ -85,15 +85,15 @@ await bridge.end();</code></pre>
 		Do not put an ElevenLabs API key in a production browser. Mint the ElevenLabs signed URL on your
 		server and pass that short-lived URL to the browser integration.
 	</p>
-	<pre><code>const signedUrl = await fetch('/api/elevenlabs-signed-url', {
+	<pre><code>{`const signedUrl = await fetch('/api/elevenlabs-signed-url', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ agentId: 'YOUR_AGENT_ID' })
-}).then((r) =&gt; r.json()).then((x) =&gt; x.signedUrl);
+}).then((r) => r.json()).then((x) => x.signedUrl);
 
 const bridge = await connectElevenLabsAgent(experience, {
   signedUrl
-});</code></pre>
+});`}</code></pre>
 
 	<h2>Why keep ElevenLabs as the speech-to-speech brain?</h2>
 	<p>
