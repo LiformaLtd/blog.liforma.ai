@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'rag-for-ai-avatars-small-fast-llms-domain-experts',
+		title: "RAG for AI Avatars: Why Your Character Doesn't Always Need a Frontier LLM",
+		description:
+			'Learn how retrieval-augmented generation can make small, fast language models highly effective domain experts for support, training and education — while reducing latency and cost.',
+		datePublished: '2026-09-23',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'technical', 'rag'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration of an AI avatar using retrieval-augmented generation to access domain knowledge'
+	},
+	{
 		slug: 'three-ways-to-build-with-liforma',
 		title: 'Three Ways to Build With Liforma: Full Stack, Bring Your Own LLM, or Add Avatars to Your Voice Agent',
 		description:
