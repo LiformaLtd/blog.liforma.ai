@@ -24,4 +24,6 @@ Runs on **http://localhost:3014** (`strictPort`).
 
 Set `PUBLIC_BLOG_EXPERIENCE_ID` for the site-wide ExperienceWidget (optional in preview).
 
+The widget uses npm `@liforma/client`. When a new SDK is published, bump that dependency here and push so Vercel republishes the blog. A registry publish does not update this site by itself.
+
 Plan: [`docs/plans/2026/09/blog-liforma-ai.plan.md`](../docs/plans/2026/09/blog-liforma-ai.plan.md).
