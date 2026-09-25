@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
 	{
+		slug: 'why-liforma-ai-avatar-cost-is-hard-to-beat',
+		title: "Why Liforma's AI Avatar Cost Will Be Hard to Beat",
+		description:
+			'Inside the four-layer cost architecture behind Liforma: browser compute, request-oriented transport, optimised self-hosted AI and elastic multi-provider GPU infrastructure.',
+		datePublished: '2026-09-25',
+		authorId: 'liforma-team',
+		tags: ['avatar-experiences', 'technical', 'product'],
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration showing four layers of Liforma cost optimisation from browser compute to GPU infrastructure'
+	},
+	{
 		slug: 'rag-for-ai-avatars-small-fast-llms-domain-experts',
 		title: "RAG for AI Avatars: Why Your Character Doesn't Always Need a Frontier LLM",
 		description:
