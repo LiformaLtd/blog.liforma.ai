@@ -240,7 +240,7 @@
 
 	<h3>What does Relay cost?</h3>
 	<p>
-		Liforma currently publishes Relay at <strong>$0.009 per generated speech minute</strong>.
+		Liforma currently publishes Relay at <strong>$0.008 per generated speech minute</strong>.
 	</p>
 	<p>
 		But unlike Live, that is not your complete AI cost. You also pay whatever your intelligence layer
@@ -502,7 +502,7 @@
 
 	<h2>What does Motion cost?</h2>
 	<p>
-		Liforma currently publishes Motion at <strong>$0.008 per generated speech minute</strong>.
+		Liforma currently publishes Motion at <strong>$0.005 per generated speech minute</strong>.
 	</p>
 	<p>
 		That buys the avatar animation layer, not the external voice-agent service.
@@ -511,7 +511,7 @@
 		Your true total cost is therefore:
 	</p>
 	<p>
-		<strong>your voice-agent cost + $0.008/min for Liforma Motion</strong>
+		<strong>your voice-agent cost + $0.005/min for Liforma Motion</strong>
 	</p>
 	<p>
 		That can be more expensive than Liforma Live at normal provider prices. Motion is primarily about
