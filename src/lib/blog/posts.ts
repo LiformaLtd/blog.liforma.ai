@@ -40,6 +40,7 @@ export const blogPosts: BlogPost[] = [
 		description:
 			'Choose between Liforma Live, Relay and Motion: use the complete avatar stack, bring your own intelligence layer, or add Liforma animation to ElevenLabs, Gemini Live, OpenAI Realtime and other voice agents.',
 		datePublished: '2026-09-23',
+		dateModified: '2026-09-26',
 		authorId: 'liforma-team',
 		tags: ['avatar-experiences', 'technical', 'product'],
 		imageKey: 'avatar-experience',
@@ -62,6 +63,7 @@ export const blogPosts: BlogPost[] = [
 		description:
 			'Compare Liforma, HeyGen LiveAvatar, Tavus CVI, D-ID Visual Agents and Synthesia Interactive Avatars by pricing, visual style, stack completeness, authoring model and best use case.',
 		datePublished: '2026-09-23',
+		dateModified: '2026-09-26',
 		authorId: 'liforma-team',
 		tags: ['avatar-experiences', 'comparison'],
 		imageKey: 'avatar-experience',
@@ -140,6 +142,7 @@ export const blogPosts: BlogPost[] = [
 		description:
 			'Compare 2026 interactive AI avatar pricing from Liforma, HeyGen, Tavus, Synthesia and D-ID — including what each per-minute price actually includes.',
 		datePublished: '2026-09-22',
+		dateModified: '2026-09-26',
 		authorId: 'liforma-team',
 		tags: ['avatar-experiences', 'pricing'],
 		imageKey: 'avatar-experience',
