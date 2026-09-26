@@ -46,6 +46,39 @@ export const resourcePosts: ResourcePost[] = [
 		purpose: 'review'
 	},
 	{
+		slug: 'anam-ai-review',
+		title: 'Anam AI Review 2026: Real-Time Avatars, Pricing, Features and Alternatives',
+		description:
+			'A practical review of Anam real-time AI avatars, including custom avatars, 70+ languages, agent features, pricing, latency claims, strengths and trade-offs.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing a review of the Anam real-time AI avatar platform',
+		purpose: 'review'
+	},
+	{
+		slug: 'd-id-visual-agents-review',
+		title: 'D-ID Visual Agents Review 2026: Pricing, RAG, Avatars and Agent Features',
+		description:
+			'A practical review of D-ID Visual Agents, including no-code creation, RAG and knowledge, real-time avatars, API access, credit-based pricing, strengths and trade-offs.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'liforma-vs-did',
+		imageAlt: 'Illustration representing a review of D-ID Visual Agents',
+		purpose: 'review'
+	},
+	{
+		slug: 'liforma-vs-tavus',
+		title: 'Liforma vs Tavus: Interactive Avatar Experiences vs Conversational AI Humans',
+		description:
+			'Compare Liforma and Tavus across visual approach, conversational stack, perception, training and simulation, authoring model, developer integration and pricing.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing Liforma and Tavus interactive avatar platforms',
+		purpose: 'comparison'
+	},
+	{
 		slug: 'tavus-alternatives',
 		title: 'Best Tavus Alternatives in 2026: Interactive Avatar Platforms Compared',
 		description:
