@@ -14,10 +14,11 @@
 	</p>
 
 	<p>
-		As of <strong>22 September 2026</strong>, published self-service pricing ranges from about
-		<strong>$0.01 per generated speech minute for Liforma's complete conversational stack</strong> to
-		well over $0.30 per connected conversation minute for some full-stack alternatives. The headline
-		price is only useful if you first understand the billing unit and what is included.
+		As of <strong>26 September 2026</strong>, Liforma's published pricing ranges from
+		<strong>$0.005 to $0.010 per generated speech minute</strong> depending on how much of the stack
+		Liforma provides, while complete-stack Live remains $0.010. Some full-stack alternatives run to
+		well over $0.30 per connected conversation minute. The headline price is only useful if you first
+		understand the billing unit and what is included.
 	</p>
 
 	<div class="callout">
@@ -99,7 +100,7 @@
 		can be misleading.
 	</p>
 
-	<h2>Liforma: $0.01 per generated speech minute for the full stack</h2>
+	<h2>Liforma: $0.005–$0.010 per generated speech minute</h2>
 	<p>
 		<a href="https://www.liforma.ai/pricing">Liforma's published pricing</a> lists
 		<strong>Liforma Live at $0.010 per speech minute</strong>. That includes:
@@ -110,6 +111,12 @@
 		<li>text-to-speech; and</li>
 		<li>avatar animation.</li>
 	</ul>
+	<p>
+		Across the current modes, <strong>Liforma Live is $0.010</strong>, <strong>Relay is $0.008</strong>,
+		and <strong>Motion and Speak are $0.005</strong> per generated speech minute. Live is the complete
+		conversational stack; the lower-priced modes let you bring more of your own intelligence, voice or
+		input stack.
+	</p>
 	<p>
 		Liforma charges for generated speech rather than the whole wall-clock duration of the experience.
 		When the avatar is silent, there is no speech-minute charge.
