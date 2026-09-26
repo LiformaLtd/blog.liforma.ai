@@ -174,11 +174,11 @@
 			</tr>
 			<tr>
 				<td>Liforma Relay</td>
-				<td>$0.005 per generated character-speech minute</td>
+				<td>$0.008 per generated character-speech minute</td>
 			</tr>
 			<tr>
 				<td>Liforma Motion / Speak</td>
-				<td>$0.008 per generated character-speech minute</td>
+				<td>$0.005 per generated character-speech minute</td>
 			</tr>
 		</tbody>
 	</table>
