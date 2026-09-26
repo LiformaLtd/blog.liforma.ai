@@ -34,7 +34,7 @@
 				<td><strong>Liforma</strong></td>
 				<td>Stateful training, learning, games, multiple characters and browser-native experiences</td>
 				<td>Avatar Experiences; full stack or modular</td>
-				<td>$0.008–$0.010/generated speech min</td>
+				<td>$0.005–$0.010/generated speech min</td>
 			</tr>
 			<tr>
 				<td><strong>Tavus</strong></td>
