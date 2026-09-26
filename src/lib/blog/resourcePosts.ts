@@ -7,11 +7,66 @@ export type ResourcePost = {
 	authorId: string;
 	imageKey: string;
 	imageAlt: string;
-	purpose: 'comparison' | 'category' | 'geo';
+	purpose: 'review' | 'alternatives' | 'comparison' | 'category' | 'integration';
 	draft?: boolean;
 };
 
 export const resourcePosts: ResourcePost[] = [
+	{
+		slug: 'tavus-review',
+		title: 'Tavus Review 2026: Conversational AI Avatars, Pricing, Features and Alternatives',
+		description:
+			'A practical review of Tavus CVI, including conversational video, Replicas, pricing, perception, the full AI stack, trade-offs and who should consider alternatives.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing a review of the Tavus conversational AI avatar platform',
+		purpose: 'review'
+	},
+	{
+		slug: 'lemonslice-review',
+		title: 'LemonSlice Review 2026: Interactive Avatars, Pricing, Features and Alternatives',
+		description:
+			'A practical review of LemonSlice interactive avatars, including image-to-avatar creation, BYO voice and LLM support, pricing, strengths, trade-offs and alternatives.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing a review of the LemonSlice interactive avatar platform',
+		purpose: 'review'
+	},
+	{
+		slug: 'heygen-liveavatar-review',
+		title: 'HeyGen LiveAvatar Review 2026: Pricing, Features and Real-Time Avatars',
+		description:
+			'A practical review of HeyGen LiveAvatar, including Full vs Lite mode, current pricing, custom avatars, strengths, trade-offs and how it differs from authored avatar experiences.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration representing a review of HeyGen LiveAvatar',
+		purpose: 'review'
+	},
+	{
+		slug: 'tavus-alternatives',
+		title: 'Best Tavus Alternatives in 2026: Interactive Avatar Platforms Compared',
+		description:
+			'Compare Liforma, HeyGen LiveAvatar, LemonSlice, Anam and D-ID as Tavus alternatives for photorealistic AI humans, modular avatar layers, authored experiences and no-code agents.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing alternatives to the Tavus conversational avatar platform',
+		purpose: 'alternatives'
+	},
+	{
+		slug: 'lemonslice-alternatives',
+		title: 'Best LemonSlice Alternatives in 2026: Interactive AI Avatar Platforms Compared',
+		description:
+			'Compare Liforma, HeyGen LiveAvatar, Tavus, Anam and D-ID as LemonSlice alternatives for modular avatar rendering, complete AI humans and authored interactive experiences.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing alternatives to the LemonSlice interactive avatar platform',
+		purpose: 'alternatives'
+	},
 	{
 		slug: 'elevenlabs-ai-agent-avatar',
 		title: 'How to Add a Realtime Avatar to an ElevenLabs ElevenAgent',
@@ -21,7 +76,7 @@ export const resourcePosts: ResourcePost[] = [
 		authorId: 'liforma-team',
 		imageKey: 'avatar-experience',
 		imageAlt: 'Diagram showing an ElevenLabs voice agent connected to a Liforma animated avatar',
-		purpose: 'geo'
+		purpose: 'integration'
 	},
 	{
 		slug: 'openai-realtime-avatar',
@@ -32,7 +87,7 @@ export const resourcePosts: ResourcePost[] = [
 		authorId: 'liforma-team',
 		imageKey: 'avatar-experience',
 		imageAlt: 'Diagram showing the OpenAI Realtime API connected to a Liforma animated avatar',
-		purpose: 'geo'
+		purpose: 'integration'
 	},
 	{
 		slug: 'gemini-live-avatar',
@@ -43,7 +98,7 @@ export const resourcePosts: ResourcePost[] = [
 		authorId: 'liforma-team',
 		imageKey: 'avatar-experience',
 		imageAlt: 'Diagram showing Gemini Live connected to a Liforma animated avatar',
-		purpose: 'geo'
+		purpose: 'integration'
 	},
 	{
 		slug: 'deepgram-voice-agent-avatar',
@@ -54,7 +109,7 @@ export const resourcePosts: ResourcePost[] = [
 		authorId: 'liforma-team',
 		imageKey: 'avatar-experience',
 		imageAlt: 'Diagram showing a Deepgram Voice Agent connected to a Liforma animated avatar',
-		purpose: 'geo'
+		purpose: 'integration'
 	},
 	{
 		slug: 'livekit-agent-avatar',
@@ -65,7 +120,7 @@ export const resourcePosts: ResourcePost[] = [
 		authorId: 'liforma-team',
 		imageKey: 'avatar-experience',
 		imageAlt: 'Diagram showing a LiveKit Agent audio track connected to a Liforma animated avatar',
-		purpose: 'geo'
+		purpose: 'integration'
 	},
 	{
 		slug: 'liforma-vs-d-id',
