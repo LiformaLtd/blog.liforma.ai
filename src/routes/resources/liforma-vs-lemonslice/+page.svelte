@@ -164,11 +164,11 @@
 			</tr>
 			<tr>
 				<td>Liforma Relay</td>
-				<td>$0.009/generated speech min with your intelligence layer</td>
+				<td>$0.008/generated speech min with your intelligence layer</td>
 			</tr>
 			<tr>
 				<td>Liforma Motion / Speak</td>
-				<td>$0.008/generated speech min</td>
+				<td>$0.005/generated speech min</td>
 			</tr>
 		</tbody>
 	</table>
