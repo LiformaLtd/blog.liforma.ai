@@ -34,7 +34,7 @@
 				<td><strong>Liforma</strong></td>
 				<td>Full experiences, multiple characters, browser rendering and very low speech-minute costs</td>
 				<td>Browser-native Avatar Experiences; full stack or modular</td>
-				<td>$0.008–$0.010/generated speech min</td>
+				<td>$0.005–$0.010/generated speech min</td>
 			</tr>
 			<tr>
 				<td><strong>HeyGen LiveAvatar</strong></td>
@@ -76,7 +76,7 @@
 	</p>
 	<p>
 		Liforma Motion is the closest direct architectural comparison to a face layer: send your own speech
-		and Liforma handles avatar animation. Its published price is $0.008 per generated speech minute.
+		and Liforma handles avatar animation. Its published price is $0.005 per generated speech minute.
 		Liforma Live adds STT, intelligence and TTS for $0.010 per generated speech minute.
 	</p>
 	<p>
