@@ -19,5 +19,6 @@
 		position="bottom-right"
 		offset={16}
 		prefetch="onExpand"
+		websiteAssistant={true}
 	/>
 {/if}
