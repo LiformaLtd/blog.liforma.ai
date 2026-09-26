@@ -35,7 +35,7 @@
 				<td><strong>Liforma</strong></td>
 				<td>Authored training, learning, games, multiple characters and low-cost browser rendering</td>
 				<td>Avatar Experiences; full-stack or modular</td>
-				<td>$0.008–$0.010/generated speech min</td>
+				<td>$0.005–$0.010/generated speech min</td>
 			</tr>
 			<tr>
 				<td><strong>Tavus</strong></td>
@@ -75,7 +75,7 @@
 		and games. Liforma can also be used modularly with an existing voice-agent stack.
 	</p>
 	<p>
-		Current published usage starts at $0.008 per generated speech minute for Motion/Speak and $0.010 for
+		Current published usage starts at $0.005 per generated speech minute for Motion/Speak and $0.010 for
 		the complete Live stack. Silent time is not billed as generated character speech.
 	</p>
 	<p>
