@@ -48,7 +48,7 @@
 				<td>Training, learning, games, multi-character and embedded experiences</td>
 				<td>Full STT → intelligence → TTS → animation, or modular BYO options</td>
 				<td>Browser-native characters, including stylised/non-photorealistic use cases</td>
-				<td>From <strong>$0.01/generated speech min</strong> for Liforma Live</td>
+				<td><strong>$0.005–$0.010/generated speech min</strong> depending on mode</td>
 			</tr>
 			<tr>
 				<td><strong>HeyGen LiveAvatar</strong></td>
@@ -115,9 +115,9 @@
 	</p>
 	<ul>
 		<li><strong>Liforma Live — $0.010/speech minute:</strong> STT, intelligence, TTS and animation.</li>
-		<li><strong>Liforma Relay — $0.009/speech minute:</strong> Liforma provides STT, TTS and animation while you supply the intelligence layer.</li>
-		<li><strong>Liforma Motion — $0.008/speech minute:</strong> send your own speech audio and use Liforma for animation.</li>
-		<li><strong>Liforma Speak — $0.008/speech minute:</strong> send text and receive spoken animated output.</li>
+		<li><strong>Liforma Relay — $0.008/speech minute:</strong> Liforma provides STT, TTS and animation while you supply the intelligence layer.</li>
+		<li><strong>Liforma Motion — $0.005/speech minute:</strong> send your own speech audio and use Liforma for animation.</li>
+		<li><strong>Liforma Speak — $0.005/speech minute:</strong> send text and receive spoken animated output.</li>
 	</ul>
 	<p>
 		The unusual part is the billing basis. Liforma bills generated speech/animation time rather than the
