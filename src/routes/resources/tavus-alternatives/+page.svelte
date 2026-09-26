@@ -34,7 +34,7 @@
 				<td><strong>Liforma</strong></td>
 				<td>Authored training, learning, games, multiple characters or very low-cost browser-native avatars</td>
 				<td>Full stack or modular; browser-rendered characters</td>
-				<td>$0.008–$0.010/generated speech min</td>
+				<td>$0.005–$0.010/generated speech min</td>
 			</tr>
 			<tr>
 				<td><strong>HeyGen LiveAvatar</strong></td>
@@ -71,7 +71,7 @@
 	</p>
 	<p>
 		Liforma's published Live price is $0.010 per generated speech minute for STT, intelligence, TTS and
-		animation. Motion and Speak are $0.008 per generated speech minute. Importantly, silent time is not
+		animation. Motion and Speak are $0.005 per generated speech minute. Importantly, silent time is not
 		billed as generated character speech.
 	</p>
 	<p>
