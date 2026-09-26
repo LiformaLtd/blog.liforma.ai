@@ -79,6 +79,39 @@ export const resourcePosts: ResourcePost[] = [
 		purpose: 'comparison'
 	},
 	{
+		slug: 'anam-ai-alternatives',
+		title: 'Best Anam Alternatives in 2026: Real-Time AI Avatar Platforms Compared',
+		description:
+			'Compare Liforma, Tavus, HeyGen LiveAvatar, LemonSlice and D-ID as Anam alternatives for authored experiences, photorealistic humans, modular avatar layers and visual agents.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing alternatives to the Anam real-time AI avatar platform',
+		purpose: 'alternatives'
+	},
+	{
+		slug: 'd-id-alternatives',
+		title: 'Best D-ID Alternatives in 2026: Visual Agent and Interactive Avatar Platforms Compared',
+		description:
+			'Compare Liforma, Tavus, HeyGen LiveAvatar, Anam and LemonSlice as D-ID alternatives for visual agents, real-time avatars, knowledge assistants and authored experiences.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'liforma-vs-did',
+		imageAlt: 'Illustration comparing alternatives to D-ID Visual Agents',
+		purpose: 'alternatives'
+	},
+	{
+		slug: 'liforma-vs-lemonslice',
+		title: 'Liforma vs LemonSlice: Browser-Native Avatar Experiences vs Real-Time Video Avatars',
+		description:
+			'Compare Liforma and LemonSlice across rendering architecture, BYO voice-agent support, hosted stacks, pricing, character flexibility, actions, multi-character authoring and distribution.',
+		datePublished: '2026-09-26',
+		authorId: 'liforma-team',
+		imageKey: 'avatar-experience',
+		imageAlt: 'Illustration comparing Liforma and LemonSlice interactive avatar platforms',
+		purpose: 'comparison'
+	},
+	{
 		slug: 'tavus-alternatives',
 		title: 'Best Tavus Alternatives in 2026: Interactive Avatar Platforms Compared',
 		description:
