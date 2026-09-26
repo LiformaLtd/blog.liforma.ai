@@ -149,7 +149,7 @@
 			<tr>
 				<td>Published starting usage</td>
 				<td>Base model around $0.164/included min on Starter</td>
-				<td>From $0.008–$0.010/generated speech min depending on mode</td>
+				<td>From $0.005–$0.010/generated speech min depending on mode</td>
 			</tr>
 		</tbody>
 	</table>
