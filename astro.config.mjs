@@ -6,5 +6,8 @@ export default defineConfig({
   site: 'https://www.liforma.ai',
   output: 'static',
   trailingSlash: 'never',
+  build: {
+    assets: 'content-assets/astro'
+  },
   integrations: [mdx(), svelte()]
 });

@@ -2,7 +2,7 @@ name: Astro Content CI
 
 on:
   push:
-    branches: [astro-migration]
+    branches: [main, astro-migration]
   workflow_dispatch:
 
 permissions:

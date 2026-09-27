@@ -2,8 +2,9 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
 export async function GET(context: { site: URL | undefined }) {
-  const posts = (await getCollection('blog', ({ data }) => !data.draft))
-    .sort((a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime());
+  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime()
+  );
 
   return rss({
     title: 'Liforma Blog',
