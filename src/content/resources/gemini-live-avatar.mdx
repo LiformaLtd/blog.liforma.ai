@@ -7,7 +7,6 @@ imageKey: "avatar-experience"
 imageAlt: "Diagram showing Gemini Live connected to a Liforma animated avatar"
 purpose: "integration"
 ---
-
 <p>
 		<strong>If your conversational app already runs on the Gemini Live API, Liforma can turn Gemini's
 		native audio responses into an animated character without replacing Gemini.</strong> Gemini remains
@@ -59,9 +58,18 @@ purpose: "integration"
 	</ul>
 
 	<h2>Minimal Gemini Live + Liforma integration</h2>
-	<pre><code>npm install @liforma/client</code></pre>
+	
 
-	<pre><code>import { connectGeminiLive } from '@liforma/client/google';
+```
+npm install @liforma/client
+```
+
+
+
+	
+
+```
+import { connectGeminiLive } from '@liforma/client/google';
 
 const bridge = await connectGeminiLive(experience, {
   proxyUrl
@@ -69,7 +77,10 @@ const bridge = await connectGeminiLive(experience, {
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();
+```
+
+
 
 	<p>
 		The helper sends microphone PCM to Gemini Live and writes Gemini's generated PCM into Liforma

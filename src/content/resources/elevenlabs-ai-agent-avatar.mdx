@@ -7,7 +7,6 @@ imageKey: "avatar-experience"
 imageAlt: "Diagram showing an ElevenLabs voice agent connected to a Liforma animated avatar"
 purpose: "integration"
 ---
-
 <p>
 		<strong>If you already have an ElevenLabs ElevenAgent, you do not need to rebuild it to add a face.</strong>
 		Keep ElevenLabs handling the realtime conversation, voice, prompts, tools and knowledge. Liforma can
@@ -57,19 +56,31 @@ purpose: "integration"
 	<p>
 		Install the Liforma and ElevenLabs clients:
 	</p>
-	<pre><code>npm install @liforma/client @elevenlabs/client</code></pre>
+	
+
+```
+npm install @liforma/client @elevenlabs/client
+```
+
+
 
 	<p>
 		Once your Liforma Experience has started, connect the existing ElevenAgent:
 	</p>
-	<pre><code>import { connectElevenLabsAgent } from '@liforma/client/elevenlabs';
+	
+
+```
+import { connectElevenLabsAgent } from '@liforma/client/elevenlabs';
 
 const bridge = await connectElevenLabsAgent(experience, {
   signedUrl
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();
+```
+
+
 
 	<p>
 		The Liforma helper receives the ElevenLabs agent audio, determines the configured PCM output format,
@@ -87,15 +98,21 @@ await bridge.end();</code></pre>
 		Do not put an ElevenLabs API key in a production browser. Mint the ElevenLabs signed URL on your
 		server and pass that short-lived URL to the browser integration.
 	</p>
-	<pre><code>const signedUrl = await fetch('/api/elevenlabs-signed-url', {
+	
+
+```
+const signedUrl = await fetch('/api/elevenlabs-signed-url', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ agentId: 'YOUR_AGENT_ID' })
-}).then((r) =&gt; r.json()).then((x) =&gt; x.signedUrl);
+}).then((r) => r.json()).then((x) => x.signedUrl);
 
 const bridge = await connectElevenLabsAgent(experience, {
   signedUrl
-});</code></pre>
+});
+```
+
+
 
 	<h2>Why keep ElevenLabs as the speech-to-speech brain?</h2>
 	<p>

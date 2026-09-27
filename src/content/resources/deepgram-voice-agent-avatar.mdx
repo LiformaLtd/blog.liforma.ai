@@ -7,7 +7,6 @@ imageKey: "avatar-experience"
 imageAlt: "Diagram showing a Deepgram Voice Agent connected to a Liforma animated avatar"
 purpose: "integration"
 ---
-
 <p>
 		<strong>If you already use Deepgram's Voice Agent API, you can keep Deepgram's complete
 		listen → think → speak loop and use Liforma only for the avatar.</strong> Liforma receives the
@@ -63,9 +62,18 @@ purpose: "integration"
 	</ul>
 
 	<h2>Minimal Deepgram + Liforma integration</h2>
-	<pre><code>npm install @liforma/client</code></pre>
+	
 
-	<pre><code>import { connectDeepgramAgent } from '@liforma/client/deepgram';
+```
+npm install @liforma/client
+```
+
+
+
+	
+
+```
+import { connectDeepgramAgent } from '@liforma/client/deepgram';
 
 const bridge = await connectDeepgramAgent(experience, {
   proxyUrl,
@@ -73,7 +81,10 @@ const bridge = await connectDeepgramAgent(experience, {
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();
+```
+
+
 
 	<p>
 		The Liforma helper manages Deepgram's realtime handshake, streams microphone audio and forwards the

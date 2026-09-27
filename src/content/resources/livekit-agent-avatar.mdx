@@ -7,7 +7,6 @@ imageKey: "avatar-experience"
 imageAlt: "Diagram showing a LiveKit Agent audio track connected to a Liforma animated avatar"
 purpose: "integration"
 ---
-
 <p>
 		<strong>If your voice agent already lives in a LiveKit room, Liforma can turn the agent's remote
 		audio track into an animated character.</strong> You can keep LiveKit Agents, rooms, telephony,
@@ -60,19 +59,31 @@ purpose: "integration"
 	</ul>
 
 	<h2>Minimal LiveKit + Liforma integration</h2>
-	<pre><code>npm install @liforma/client livekit-client</code></pre>
+	
 
-	<pre><code>import { connectLiveKitAgent } from '@liforma/client/livekit';
+```
+npm install @liforma/client livekit-client
+```
+
+
+
+	
+
+```
+import { connectLiveKitAgent } from '@liforma/client/livekit';
 
 const bridge = await connectLiveKitAgent(experience, {
   url,
   token,
   // enableTranscript: true,
-  // shouldBridgeParticipant: (p) =&gt; p.identity.startsWith('agent')
+  // shouldBridgeParticipant: (p) => p.identity.startsWith('agent')
 });
 
 // Later:
-await bridge.end();</code></pre>
+await bridge.end();
+```
+
+
 
 	<p>
 		The helper joins the room, bridges the selected remote audio track directly into a Liforma
