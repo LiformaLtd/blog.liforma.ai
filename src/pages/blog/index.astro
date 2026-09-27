@@ -17,7 +17,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <p class="eyebrow">Liforma Blog</p>
       <h1>Building the future of avatar experiences</h1>
       <p>Product updates, technical deep dives, and practical guides for interactive AI characters.</p>
-      <!-- content-deploy:independent -->
     </div>
     <div class="card-grid">
       {posts.map((post, index) => (
