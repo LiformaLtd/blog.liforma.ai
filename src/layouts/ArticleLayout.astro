@@ -1,0 +1,97 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { absoluteUrl, formatDate, imageSrc, imageSrcset, tagLabel } from '../lib/site';
+
+interface Props {
+  kind: 'Article' | 'Resource';
+  pathname: string;
+  data: {
+    title: string;
+    description: string;
+    datePublished: Date;
+    dateModified?: Date;
+    authorId: string;
+    imageKey: string;
+    imageAlt: string;
+    tags?: string[];
+  };
+}
+
+const { kind, pathname, data } = Astro.props;
+const published = data.datePublished;
+const modified = data.dateModified ?? published;
+const ogImage = imageSrc(data.imageKey, 1440);
+const tags = data.tags ?? [];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  datePublished: published.toISOString().slice(0, 10),
+  dateModified: modified.toISOString().slice(0, 10),
+  author: {
+    '@type': 'Organization',
+    name: 'The Liforma Team',
+    url: 'https://www.liforma.ai'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Liforma',
+    url: 'https://www.liforma.ai'
+  },
+  image: [absoluteUrl(ogImage)],
+  mainEntityOfPage: absoluteUrl(pathname),
+  url: absoluteUrl(pathname)
+};
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  pathname={pathname}
+  image={ogImage}
+  imageAlt={data.imageAlt}
+  type="article"
+  publishedTime={published}
+  modifiedTime={modified}
+  jsonLd={jsonLd}
+>
+  <article class="article">
+    <header class="article-header">
+      <p class="eyebrow">{kind}</p>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <div class="byline">
+        <span>The Liforma Team</span>
+        <span class="sep">·</span>
+        <span>Product & engineering</span>
+        <span class="sep">·</span>
+        <time datetime={published.toISOString().slice(0, 10)}>{formatDate(published)}</time>
+      </div>
+      {tags.length > 0 && (
+        <div class="tags">
+          {tags.map((tag) => <a class="pill" href={`/blog/tag/${tag}`}>{tagLabel(tag)}</a>)}
+        </div>
+      )}
+    </header>
+
+    <figure class="article-hero">
+      <img
+        src={imageSrc(data.imageKey, 1440)}
+        srcset={imageSrcset(data.imageKey)}
+        sizes="(max-width: 900px) 100vw, 720px"
+        width="1440"
+        height="810"
+        alt={data.imageAlt}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-body">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+import { formatDate, imageSrc, imageSrcset, tagLabel } from '../lib/site';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  datePublished: Date;
+  imageKey: string;
+  imageAlt: string;
+  tags?: string[];
+  purpose?: string;
+  eager?: boolean;
+}
+
+const { href, title, description, datePublished, imageKey, imageAlt, tags = [], purpose, eager = false } = Astro.props;
+---
+
+<a class="content-card" href={href}>
+  <div class="content-card-cover">
+    <img
+      src={imageSrc(imageKey, 480)}
+      srcset={imageSrcset(imageKey)}
+      sizes="(max-width: 720px) 100vw, 360px"
+      width="480"
+      height="270"
+      alt={imageAlt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </div>
+  <div class="content-card-body">
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <div class="content-card-meta">
+      <span class="pill">{formatDate(datePublished)}</span>
+      {purpose && <span class="pill">{purpose}</span>}
+      {tags.map((tag) => <span class="pill">{tagLabel(tag)}</span>)}
+    </div>
+  </div>
+</a>

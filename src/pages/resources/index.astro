@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ContentCard from '../../components/ContentCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const resources = (await getCollection('resources', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime());
+---
+
+<BaseLayout
+  title="Resources"
+  description="Reviews, comparisons, alternatives and integration guides for interactive AI avatar platforms."
+  pathname="/resources"
+>
+  <section class="listing">
+    <div class="listing-heading">
+      <p class="eyebrow">Liforma Resources</p>
+      <h1>Interactive avatar platform resources</h1>
+      <p>Practical reviews, comparisons, alternatives and integration guides.</p>
+    </div>
+    <div class="card-grid">
+      {resources.map((resource, index) => (
+        <ContentCard
+          href={`/resources/${resource.id}`}
+          title={resource.data.title}
+          description={resource.data.description}
+          datePublished={resource.data.datePublished}
+          imageKey={resource.data.imageKey}
+          imageAlt={resource.data.imageAlt}
+          purpose={resource.data.purpose}
+          eager={index < 2}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

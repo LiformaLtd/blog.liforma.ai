@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { TAGS } from '../../../lib/site';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const tags = TAGS
+  .map((tag) => ({ ...tag, count: posts.filter((post) => post.data.tags.includes(tag.slug)).length }))
+  .filter((tag) => tag.count > 0);
+---
+
+<BaseLayout title="Tags" description="Browse Liforma blog articles by topic." pathname="/blog/tags">
+  <section class="listing narrow">
+    <div class="listing-heading"><h1>Blog tags</h1></div>
+    <div class="tag-list">
+      {tags.map((tag) => <a class="pill large" href={`/blog/tag/${tag.slug}`}>{tag.label} <span>{tag.count}</span></a>)}
+    </div>
+  </section>
+</BaseLayout>

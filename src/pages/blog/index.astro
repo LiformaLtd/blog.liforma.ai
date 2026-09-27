@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ContentCard from '../../components/ContentCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime());
+---
+
+<BaseLayout
+  title="Blog"
+  description="Product updates, technical deep dives, and practical guides for Liforma avatar experiences."
+  pathname="/blog"
+>
+  <section class="listing">
+    <div class="listing-heading">
+      <p class="eyebrow">Liforma Blog</p>
+      <h1>Building the future of avatar experiences</h1>
+      <p>Product updates, technical deep dives, and practical guides for interactive AI characters.</p>
+    </div>
+    <div class="card-grid">
+      {posts.map((post, index) => (
+        <ContentCard
+          href={`/blog/${post.id}`}
+          title={post.data.title}
+          description={post.data.description}
+          datePublished={post.data.datePublished}
+          imageKey={post.data.imageKey}
+          imageAlt={post.data.imageAlt}
+          tags={post.data.tags}
+          eager={index < 2}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

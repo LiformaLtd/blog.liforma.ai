@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+import { absoluteUrl, DEFAULT_DESCRIPTION, DOCS_URL, pageTitle, SITE_NAME, WWW_URL } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  pathname?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title = SITE_NAME,
+  description = DEFAULT_DESCRIPTION,
+  pathname = '/blog',
+  image = '/content-assets/og-default.png',
+  imageAlt = 'Liforma',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  jsonLd
+} = Astro.props;
+
+const canonical = absoluteUrl(pathname);
+const fullTitle = pageTitle(title);
+const ogImage = image.startsWith('http') ? image : absoluteUrl(image);
+const current = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="alternate" type="application/rss+xml" title="Liforma Blog RSS" href="/rss.xml" />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Liforma" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/content-assets/favicon.svg" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href={WWW_URL}>liforma</a>
+        <nav aria-label="Primary">
+          <a href="/blog" aria-current={current === '/blog' ? 'page' : undefined}>Blog</a>
+          <a href="/resources" aria-current={current.startsWith('/resources') ? 'page' : undefined}>Resources</a>
+          <a href="/blog/tags" aria-current={current.startsWith('/blog/tag') ? 'page' : undefined}>Tags</a>
+          <a href="/blog/search" aria-current={current === '/blog/search' ? 'page' : undefined}>Search</a>
+          <a href={DOCS_URL}>Docs</a>
+          <a href={WWW_URL}>Experiences</a>
+        </nav>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <a class="brand" href={WWW_URL}>liforma</a>
+        <nav aria-label="Footer">
+          <a href="/blog">Blog</a>
+          <a href="/resources">Resources</a>
+          <a href="/blog/tags">Tags</a>
+          <a href="/blog/search">Search</a>
+          <a href={`${WWW_URL}/pricing`}>Pricing</a>
+          <a href={DOCS_URL}>Docs</a>
+        </nav>
+        <nav aria-label="Company">
+          <a href="mailto:info@liforma.ai">Contact</a>
+          <a href={`${WWW_URL}/legal/privacy-policy`}>Privacy</a>
+          <a href={`${WWW_URL}/legal/terms-of-service`}>Terms</a>
+          <a href={`${WWW_URL}/legal/acceptable-use`}>Acceptable use</a>
+        </nav>
+        <p>© {new Date().getFullYear()} Liforma</p>
+      </div>
+    </footer>
+  </body>
+</html>

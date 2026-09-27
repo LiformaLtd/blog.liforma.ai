@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ContentCard from '../../../components/ContentCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { TAGS } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return TAGS
+    .filter((tag) => posts.some((post) => post.data.tags.includes(tag.slug)))
+    .map((tag) => ({ params: { tag: tag.slug }, props: { tag } }));
+}
+
+const { tag } = Astro.props;
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tags.includes(tag.slug)))
+  .sort((a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime());
+---
+
+<BaseLayout title={tag.label} description={`Liforma articles about ${tag.label}.`} pathname={`/blog/tag/${tag.slug}`}>
+  <section class="listing">
+    <div class="listing-heading"><p class="eyebrow">Topic</p><h1>{tag.label}</h1></div>
+    <div class="card-grid">
+      {posts.map((post) => (
+        <ContentCard
+          href={`/blog/${post.id}`}
+          title={post.data.title}
+          description={post.data.description}
+          datePublished={post.data.datePublished}
+          imageKey={post.data.imageKey}
+          imageAlt={post.data.imageAlt}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
