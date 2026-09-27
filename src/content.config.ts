@@ -14,7 +14,7 @@ const common = {
 };
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/blog' }),
   schema: z.object({
     ...common,
     tags: z.array(z.string()).default([])
@@ -22,7 +22,7 @@ const blog = defineCollection({
 });
 
 const resources = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/resources' }),
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/resources' }),
   schema: z.object({
     ...common,
     purpose: z.enum(['review', 'alternatives', 'comparison', 'category', 'integration'])
