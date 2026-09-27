@@ -1,4 +1,5 @@
 ---
+import ExperienceWidgetHost from '../components/ExperienceWidgetHost.svelte';
 import '../styles/global.css';
 import { absoluteUrl, DEFAULT_DESCRIPTION, DOCS_URL, pageTitle, SITE_NAME, WWW_URL } from '../lib/site';
 
@@ -26,6 +27,7 @@ const {
   jsonLd
 } = Astro.props;
 
+const experienceId = import.meta.env.PUBLIC_BLOG_EXPERIENCE_ID?.trim() ?? '';
 const canonical = absoluteUrl(pathname);
 const fullTitle = pageTitle(title);
 const ogImage = image.startsWith('http') ? image : absoluteUrl(image);
@@ -62,7 +64,7 @@ const current = Astro.url.pathname;
     <link rel="icon" href="/content-assets/favicon.svg" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
-  <body>
+  <body class:list={{ 'has-experience-widget': experienceId.length > 0 }}>
     <header class="site-header">
       <div class="site-header-inner">
         <a class="brand" href={WWW_URL}>liforma</a>
@@ -99,5 +101,6 @@ const current = Astro.url.pathname;
         <p>© {new Date().getFullYear()} Liforma</p>
       </div>
     </footer>
+    {experienceId && <ExperienceWidgetHost client:only="svelte" {experienceId} />}
   </body>
 </html>
