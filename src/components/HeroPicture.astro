@@ -7,7 +7,8 @@ interface Props {
   imageKey: string;
   alt: string;
   sizes: string;
-  widths?: number[];
+  width: number;
+  widths: number[];
   fallbackWidth?: 480 | 960 | 1440;
   loading?: 'eager' | 'lazy';
   fetchpriority?: 'high' | 'auto' | 'low';
@@ -17,15 +18,15 @@ const {
   imageKey,
   alt,
   sizes,
-  widths = [480, 960, 1440],
+  width,
+  widths,
   fallbackWidth = 960,
   loading = 'lazy',
   fetchpriority
 } = Astro.props;
 
 const src = heroImage(imageKey);
-const displayWidth = Math.max(...widths);
-const displayHeight = Math.round((displayWidth * 9) / 16);
+const displayHeight = Math.round((width * 9) / 16);
 const fallbackHeight = Math.round((fallbackWidth * 9) / 16);
 ---
 
@@ -35,7 +36,7 @@ const fallbackHeight = Math.round((fallbackWidth * 9) / 16);
       src={src}
       formats={['avif', 'webp']}
       fallbackFormat="webp"
-      width={displayWidth}
+      width={width}
       height={displayHeight}
       widths={widths}
       sizes={sizes}
@@ -49,7 +50,7 @@ const fallbackHeight = Math.round((fallbackWidth * 9) / 16);
       src={imageSrc(imageKey, fallbackWidth)}
       srcset={imageSrcset(imageKey)}
       sizes={sizes}
-      width={fallbackWidth}
+      width={width}
       height={fallbackHeight}
       alt={alt}
       loading={loading}

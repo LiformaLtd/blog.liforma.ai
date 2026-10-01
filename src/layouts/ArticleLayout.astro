@@ -25,7 +25,7 @@ const published = data.datePublished;
 const modified = data.dateModified ?? published;
 const hero = heroImage(data.imageKey);
 const ogImage = hero
-  ? (await getImage({ src: hero, width: 1440, format: 'webp' })).src
+  ? (await getImage({ src: hero, width: 1280, format: 'webp' })).src
   : imageSrc(data.imageKey, 1440);
 const tags = data.tags ?? [];
 
@@ -86,8 +86,10 @@ const jsonLd = {
       <HeroPicture
         imageKey={data.imageKey}
         alt={data.imageAlt}
-        sizes="(max-width: 900px) 100vw, 720px"
-        fallbackWidth={1440}
+        width={640}
+        widths={[640, 960, 1280]}
+        sizes="(max-width: 42rem) calc(100vw - 2.5rem), 39.5rem"
+        fallbackWidth={960}
         loading="eager"
         fetchpriority="high"
       />

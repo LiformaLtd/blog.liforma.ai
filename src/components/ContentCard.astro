@@ -22,7 +22,9 @@ const { href, title, description, datePublished, imageKey, imageAlt, tags = [], 
     <HeroPicture
       imageKey={imageKey}
       alt={imageAlt}
-      sizes="(max-width: 720px) 100vw, 360px"
+      width={480}
+      widths={[480, 720, 960]}
+      sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 65rem) calc((100vw - 3.75rem) / 2), calc((min(100vw, 72rem) - 5rem) / 3)"
       fallbackWidth={480}
       loading={eager ? 'eager' : 'lazy'}
     />
