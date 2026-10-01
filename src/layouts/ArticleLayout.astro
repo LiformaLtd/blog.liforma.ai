@@ -1,6 +1,9 @@
 ---
+import { getImage } from 'astro:assets';
+import HeroPicture from '../components/HeroPicture.astro';
+import { heroImage } from '../lib/heroes';
 import BaseLayout from './BaseLayout.astro';
-import { absoluteUrl, formatDate, imageSrc, imageSrcset, tagLabel } from '../lib/site';
+import { absoluteUrl, formatDate, imageSrc, tagLabel } from '../lib/site';
 
 interface Props {
   kind: 'Article' | 'Resource';
@@ -20,7 +23,10 @@ interface Props {
 const { kind, pathname, data } = Astro.props;
 const published = data.datePublished;
 const modified = data.dateModified ?? published;
-const ogImage = imageSrc(data.imageKey, 1440);
+const hero = heroImage(data.imageKey);
+const ogImage = hero
+  ? (await getImage({ src: hero, width: 1440, format: 'webp' })).src
+  : imageSrc(data.imageKey, 1440);
 const tags = data.tags ?? [];
 
 const jsonLd = {
@@ -77,15 +83,12 @@ const jsonLd = {
     </header>
 
     <figure class="article-hero">
-      <img
-        src={imageSrc(data.imageKey, 1440)}
-        srcset={imageSrcset(data.imageKey)}
-        sizes="(max-width: 900px) 100vw, 720px"
-        width="1440"
-        height="810"
+      <HeroPicture
+        imageKey={data.imageKey}
         alt={data.imageAlt}
+        sizes="(max-width: 900px) 100vw, 720px"
+        fallbackWidth={1440}
         loading="eager"
-        decoding="async"
         fetchpriority="high"
       />
     </figure>

@@ -1,0 +1,60 @@
+---
+import { Picture } from 'astro:assets';
+import { heroImage } from '../lib/heroes';
+import { imageSrc, imageSrcset } from '../lib/site';
+
+interface Props {
+  imageKey: string;
+  alt: string;
+  sizes: string;
+  widths?: number[];
+  fallbackWidth?: 480 | 960 | 1440;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'auto' | 'low';
+}
+
+const {
+  imageKey,
+  alt,
+  sizes,
+  widths = [480, 960, 1440],
+  fallbackWidth = 960,
+  loading = 'lazy',
+  fetchpriority
+} = Astro.props;
+
+const src = heroImage(imageKey);
+const displayWidth = Math.max(...widths);
+const displayHeight = Math.round((displayWidth * 9) / 16);
+const fallbackHeight = Math.round((fallbackWidth * 9) / 16);
+---
+
+{
+  src ? (
+    <Picture
+      src={src}
+      formats={['avif', 'webp']}
+      fallbackFormat="webp"
+      width={displayWidth}
+      height={displayHeight}
+      widths={widths}
+      sizes={sizes}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      fetchpriority={fetchpriority}
+    />
+  ) : (
+    <img
+      src={imageSrc(imageKey, fallbackWidth)}
+      srcset={imageSrcset(imageKey)}
+      sizes={sizes}
+      width={fallbackWidth}
+      height={fallbackHeight}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      fetchpriority={fetchpriority}
+    />
+  )
+}

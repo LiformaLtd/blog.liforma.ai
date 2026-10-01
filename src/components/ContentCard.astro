@@ -1,5 +1,6 @@
 ---
-import { formatDate, imageSrc, imageSrcset, tagLabel } from '../lib/site';
+import HeroPicture from './HeroPicture.astro';
+import { formatDate, tagLabel } from '../lib/site';
 
 interface Props {
   href: string;
@@ -18,15 +19,12 @@ const { href, title, description, datePublished, imageKey, imageAlt, tags = [], 
 
 <a class="content-card" href={href}>
   <div class="content-card-cover">
-    <img
-      src={imageSrc(imageKey, 480)}
-      srcset={imageSrcset(imageKey)}
-      sizes="(max-width: 720px) 100vw, 360px"
-      width="480"
-      height="270"
+    <HeroPicture
+      imageKey={imageKey}
       alt={imageAlt}
+      sizes="(max-width: 720px) 100vw, 360px"
+      fallbackWidth={480}
       loading={eager ? 'eager' : 'lazy'}
-      decoding="async"
     />
   </div>
   <div class="content-card-body">
