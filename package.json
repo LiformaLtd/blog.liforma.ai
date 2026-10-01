@@ -13,7 +13,7 @@
     "@astrojs/mdx": "^8.0.2",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/svelte": "^9.0.1",
-    "@liforma/client": "^0.4.31",
+    "@liforma/client": "^0.4.32",
     "astro": "^7.3.5",
     "cookie": "^2.0.1",
     "svelte": "^5.56.1"
