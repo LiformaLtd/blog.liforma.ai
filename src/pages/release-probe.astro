@@ -1,0 +1,37 @@
+---
+import ExperienceWidgetHost from '../components/ExperienceWidgetHost.svelte';
+
+/**
+ * Compatibility hook for an ephemeral content build.
+ * Production builds leave PUBLIC_CONTENT_PROBE unset, so this page does not
+ * mount a widget and is not the production content alias used by the probe.
+ */
+const CERTIFICATION_EXPERIENCE_ID = 'exp_relcert1';
+const RC_API_BASE_URL = 'https://rc-api.liforma.ai';
+const RC_PLAYER_EMBED_URL = 'https://rc-player.liforma.ai/embed';
+const enabled = import.meta.env.PUBLIC_CONTENT_PROBE === '1';
+const probeScript = `window.__LIFORMA_API_BASE_URL = ${JSON.stringify(RC_API_BASE_URL)};\nwindow.__LIFORMA_PLAYER_EMBED_URL = ${JSON.stringify(RC_PLAYER_EMBED_URL)};`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Content probe</title>
+    {enabled && <script is:inline set:html={probeScript} />}
+  </head>
+  <body>
+    {
+      enabled ? (
+        <>
+          <p data-content-probe={CERTIFICATION_EXPERIENCE_ID}>Release certification</p>
+          <ExperienceWidgetHost client:only="svelte" experienceId={CERTIFICATION_EXPERIENCE_ID} />
+        </>
+      ) : (
+        <p>Not found</p>
+      )
+    }
+  </body>
+</html>
